@@ -72,6 +72,13 @@ header > div > div {
   text-transform: uppercase;
 }
 
+.sign-in:hover {
+  background: black;
+  color: white;
+  transition: background 0.3s ease; /* Smooth transition effect */
+}
+
+
 /* Banner Section */
 
 .banner-section {
