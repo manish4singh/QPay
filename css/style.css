@@ -78,13 +78,11 @@ header > div > div {
   transition: background 0.3s ease; /* Smooth transition effect */
 }
 
-
 /* Banner Section */
 
 .banner-section {
-  background: url("../assets/Rectangle.png") no-repeat center/cover;
+  background: url("../assets/Rectangle.png") no-repeat top/contain;
   min-height: 450px;
-
   position: relative;
   z-index: 0; /* Ensure the banner background stays below the form */
 }
@@ -127,8 +125,6 @@ header > div > div {
   width: 100%;
   height: 100%;
   margin-top: 33px;
-  border: 1px solid #d3d3d3; /* Added gray border */
-
 }
 
 .input-box {
@@ -186,7 +182,7 @@ input:focus::placeholder {
   min-height: 68px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  gap: 8px;
   align-items: center;
 }
 
@@ -195,7 +191,9 @@ input:focus::placeholder {
   max-width: 380px;
   width: 100%;
   padding: 18px 0;
-  background: var(--primary-text-color);
+  background: var(
+    --primary-text-color
+  ); /* Use the primary text color for the button background */
   color: white;
   text-align: center;
   text-decoration: none; /* Remove underline for the anchor tag */
@@ -203,11 +201,12 @@ input:focus::placeholder {
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease; /* Smooth transition effect */
 }
 
 .submit:hover {
-  background: #000000;
+  background: white; /* Change to white on hover */
+  color: #000; /* Change text color to black on hover */
 }
 
 .social-login {
@@ -215,7 +214,7 @@ input:focus::placeholder {
   text-align: center;
 }
 
-.social-login>p {
+.social-login > p {
   font-size: 14px;
   color: var(--secondary-text-color);
   margin-bottom: 10px;
@@ -227,7 +226,7 @@ input:focus::placeholder {
   gap: 15px;
 }
 
-.social-icons>a>img {
+.social-icons > a > img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -235,7 +234,7 @@ input:focus::placeholder {
   transition: transform 0.3s ease;
 }
 
-.social-icons>a>img:hover {
+.social-icons > a > img:hover {
   transform: scale(1.1);
 }
 
@@ -248,8 +247,16 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+  .banner-section {
+    background: url("../assets/Rectangle.png") no-repeat center/cover;
+  }
+
   .form-area {
-    padding: 20px 40px;
+    padding: 19px 19px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 
   .input-box {
@@ -262,19 +269,40 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
+  .sign-in {
+    padding: 10px 20px;
+  }
+
   .form-area {
     margin-top: 80px;
   }
 
-  .social-icons>a>img {
+  .social-icons > a > img {
     width: 35px;
     height: 35px;
+  }
+  label[for="terms"] {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 386px) {
+  #terms {
+    margin-bottom: 16px;
   }
 }
 
 @media screen and (max-width: 320px) {
   .sign-in {
-    padding: 8px 20px;
+    padding: 8px 15px;
+  }
+
+  label[for="terms"] {
+    font-size: 12px;
+  }
+
+  #terms {
+    margin-bottom: 15px;
   }
 
   .submit {
